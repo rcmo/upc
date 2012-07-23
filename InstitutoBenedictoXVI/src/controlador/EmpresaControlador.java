@@ -3,7 +3,7 @@ package controlador;
 import dominio.Empresa;
 
 
-public class CompraControlador {	
+public class EmpresaControlador {	
 	
 	public static Empresa registrarEmpresa(String codigo, String razon_social, Empresa.Rubro rubro, String direccion, String correo, String telefono, String ciudad, 
     		String pais, Empresa.Estado estado, String observaciones){

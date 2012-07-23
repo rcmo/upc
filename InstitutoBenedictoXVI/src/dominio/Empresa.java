@@ -1,12 +1,9 @@
 package dominio;
 
-import java.sql.Date;
-
-
 public class Empresa {	
 	
 public enum Estado {ACTIVA, INACTIVA, SUSPENDIDA}	
-public enum Rubro {UTILES, SERVICIOS, COMPUTO, LIMPIEZA}	
+public enum Rubro {UTILES, SERVICIOS, COMPUTO, LIMPIEZA, CLIENTE}	
 	
 	private String codigo;	
 	private String razon_social;

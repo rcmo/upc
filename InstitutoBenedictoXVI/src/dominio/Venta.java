@@ -2,6 +2,8 @@ package dominio;
 
 import java.sql.Date;
 
+import org.joda.time.LocalDate;
+
 import dominio.Compra.Estado;
 
 public class Venta {
@@ -9,31 +11,31 @@ public enum Estado {NUEVO, ANULADA, CANCELADA}
 	
 	private String concepto;	
 	private int numero;
-	private Date fechaEmision;
+	private LocalDate fechaEmision;
 	private String empresa;
 	private double subtotal;
 	private double igv;
 	private double total;
 	private String moneda;
-	private Date fechaVencimiento;
-	private Date fechaPago;
-	private Estado estado;
+	private LocalDate fechaVencimiento;
+	private LocalDate fechaPago;
+	private dominio.Venta.Estado estado;
 	private String observaciones;	   
 
 	
-    public Venta(String pconcepto,int pnumero,Date pfechaEmision,String pempresa,double psubtotal,double pigv,double ptotal,String pmoneda,Date pfechaVencimiento,Date pfechaPago,Estado pestado,String pobservaciones) {
+    public Venta(String pconcepto,int pnumero,LocalDate fechaEmision2,String pempresa,double psubtotal,double pigv,double ptotal,String pmoneda,LocalDate fechaVencimiento2,LocalDate fechaPago2,dominio.Venta.Estado nuevo,String pobservaciones) {
 
         this.concepto = pconcepto;	       
         this.numero = pnumero;          
-        this.fechaEmision = pfechaEmision;    
+        this.fechaEmision = fechaEmision2;    
         this.empresa = pempresa;           
         this.subtotal = psubtotal;        
         this.igv = pigv;             
         this.total = ptotal;  
         this.moneda = pmoneda;          
-        this.fechaVencimiento = pfechaVencimiento;
-        this.fechaPago = pfechaPago;
-        this.estado = pestado;
+        this.fechaVencimiento = fechaVencimiento2;
+        this.fechaPago = fechaPago2;
+        this.estado = nuevo;
         this.observaciones = pobservaciones;
     }
 
@@ -50,10 +52,10 @@ public enum Estado {NUEVO, ANULADA, CANCELADA}
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
-	public Date getFechaEmision() {
+	public LocalDate getFechaEmision() {
 		return fechaEmision;
 	}
-	public void setFechaEmision(Date fechaEmision) {
+	public void setFechaEmision(LocalDate fechaEmision) {
 		this.fechaEmision = fechaEmision;
 	}
 	public String getEmpresa() {
@@ -86,16 +88,16 @@ public enum Estado {NUEVO, ANULADA, CANCELADA}
 	public void setMoneda(String moneda) {
 		this.moneda = moneda;
 	}
-	public Date getFechaVencimiento() {
+	public LocalDate getFechaVencimiento() {
 		return fechaVencimiento;
 	}
-	public void setFechaVencimiento(Date fechaVencimiento) {
+	public void setFechaVencimiento(LocalDate fechaVencimiento) {
 		this.fechaVencimiento = fechaVencimiento;
 	}
-	public Date getFechaPago() {
+	public LocalDate getFechaPago() {
 		return fechaPago;
 	}
-	public void setFechaPago(Date fechaPago) {
+	public void setFechaPago(LocalDate fechaPago) {
 		this.fechaPago = fechaPago;
 	}
 	public Estado getEstado() {
