@@ -2,7 +2,7 @@
 
 package dominio;
 
-import java.sql.Date;
+import org.joda.time.LocalDate;
 
 
 public class Compra {
@@ -10,35 +10,36 @@ public enum Estado {NUEVO, ANULADA, CANCELADA}
 	
 	private String concepto;	
 	private int numero;
-	private Date fechaEmision;
+	private LocalDate fechaEmision;
 	private String empresa;
 	private double subtotal;
 	private double igv;
 	private double total;
 	private String moneda;
-	private Date fechaVencimiento;
-	private Date fechaPago;
+	private LocalDate fechaVencimiento;
+	private LocalDate fechaPago;
 	private Estado estado;
-	private String observaciones;	   
-
+	private String observaciones;
 	
-    public Compra(String pconcepto,int pnumero,Date pfechaEmision,String pempresa,double psubtotal,double pigv,double ptotal,String pmoneda,Date pfechaVencimiento,Date pfechaPago,Estado pestado,String pobservaciones) {
-
-        this.concepto = pconcepto;	       
-        this.numero = pnumero;          
-        this.fechaEmision = pfechaEmision;    
-        this.empresa = pempresa;           
-        this.subtotal = psubtotal;        
-        this.igv = pigv;             
-        this.total = ptotal;  
-        this.moneda = pmoneda;          
-        this.fechaVencimiento = pfechaVencimiento;
-        this.fechaPago = pfechaPago;
-        this.estado = pestado;
-        this.observaciones = pobservaciones;
-    }
-
-	
+		
+	public Compra(String concepto, int numero, LocalDate fechaEmision,
+			String empresa, double subtotal, double igv, double total,
+			String moneda, LocalDate fechaVencimiento, LocalDate fechaPago,
+			Estado estado, String observaciones) {
+		super();
+		this.concepto = concepto;
+		this.numero = numero;
+		this.fechaEmision = fechaEmision;
+		this.empresa = empresa;
+		this.subtotal = subtotal;
+		this.igv = igv;
+		this.total = total;
+		this.moneda = moneda;
+		this.fechaVencimiento = fechaVencimiento;
+		this.fechaPago = fechaPago;
+		this.estado = estado;
+		this.observaciones = observaciones;
+	}
 	public String getConcepto() {
 		return concepto;
 	}
@@ -51,10 +52,10 @@ public enum Estado {NUEVO, ANULADA, CANCELADA}
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
-	public Date getFechaEmision() {
+	public LocalDate getFechaEmision() {
 		return fechaEmision;
 	}
-	public void setFechaEmision(Date fechaEmision) {
+	public void setFechaEmision(LocalDate fechaEmision) {
 		this.fechaEmision = fechaEmision;
 	}
 	public String getEmpresa() {
@@ -87,16 +88,16 @@ public enum Estado {NUEVO, ANULADA, CANCELADA}
 	public void setMoneda(String moneda) {
 		this.moneda = moneda;
 	}
-	public Date getFechaVencimiento() {
+	public LocalDate getFechaVencimiento() {
 		return fechaVencimiento;
 	}
-	public void setFechaVencimiento(Date fechaVencimiento) {
+	public void setFechaVencimiento(LocalDate fechaVencimiento) {
 		this.fechaVencimiento = fechaVencimiento;
 	}
-	public Date getFechaPago() {
+	public LocalDate getFechaPago() {
 		return fechaPago;
 	}
-	public void setFechaPago(Date fechaPago) {
+	public void setFechaPago(LocalDate fechaPago) {
 		this.fechaPago = fechaPago;
 	}
 	public Estado getEstado() {
